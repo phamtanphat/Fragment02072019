@@ -1,17 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <FrameLayout
-        android:id="@+id/containerFragment"
+    <Button
+        android:id="@+id/btnAddAndroid"
+        android:text="Add Android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_toRightOf="@id/btnAddAndroid"
+        android:id="@+id/btnAddIos"
+        android:text="Add ios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_toRightOf="@id/btnAddIos"
+        android:id="@+id/btnRemoveAndroid"
+        android:text="Remove Android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_below="@id/btnAddAndroid"
+        android:id="@+id/btnRemoveIos"
+        android:text="Remove ios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_toRightOf="@id/btnRemoveIos"
+        android:layout_below="@id/btnAddAndroid"
+        android:id="@+id/btnReplaceAndroid"
+        android:text="Replace Android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_toRightOf="@id/btnReplaceAndroid"
+        android:layout_below="@id/btnAddAndroid"
+        android:id="@+id/btnReplaceIos"
+        android:text="Replace ios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_below="@id/btnRemoveIos"
+        android:id="@+id/btnpopbackstack"
+        android:text="Pop back stack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_toRightOf="@id/btnpopbackstack"
+        android:layout_below="@id/btnRemoveIos"
+        android:id="@+id/btnAtachAndroid"
+        android:text="Attach android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_toRightOf="@id/btnAtachAndroid"
+        android:layout_below="@id/btnRemoveIos"
+        android:id="@+id/btnDetachAndroid"
+        android:text="Detach android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_below="@id/btnDetachAndroid"
+        android:orientation="vertical"
+        android:id="@+id/linearContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-    </FrameLayout>
-</LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
