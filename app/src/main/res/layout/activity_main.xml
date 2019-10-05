@@ -8,15 +8,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <fragment
-        android:id="@+id/fragment"
-        android:name="phamtanphat.ptp.khoaphamtraining.fragment.AndroidFragment"
+    <FrameLayout
+        android:id="@+id/containerFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
 
-    <fragment
-        android:id="@+id/fragment2"
-        android:name="phamtanphat.ptp.khoaphamtraining.fragment.IosFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    </FrameLayout>
 </LinearLayout>
