@@ -73,6 +73,23 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
+    public void attachAndroid(View v){
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        AndroidFragment androidFragment = (AndroidFragment) fragmentManager.findFragmentByTag("fragmentAndroid");
+        if (androidFragment != null){
+            fragmentTransaction.attach(androidFragment);
+            fragmentTransaction.commit();
+        }
+
+    }
+    public void detachAndroid(View v){
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        AndroidFragment androidFragment = (AndroidFragment) fragmentManager.findFragmentByTag("fragmentAndroid");
+        if (androidFragment != null){
+            fragmentTransaction.detach(androidFragment);
+            fragmentTransaction.commit();
+        }
+    }
     private void getCountFragmentInActivity(){
         Log.d("BBB",fragmentManager.getFragments().size() + "" );
     }
