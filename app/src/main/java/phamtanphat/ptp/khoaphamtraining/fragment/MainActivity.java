@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
         AndroidFragment androidFragment = new AndroidFragment(color);
         fragmentTransaction.add(R.id.linearContainer,androidFragment,"fragmentAndroid");
+        fragmentTransaction.addToBackStack("AndroidFragmnet");
         fragmentTransaction.commit();
 
     }
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         IosFragment iosFragment = new IosFragment();
         fragmentTransaction.add(R.id.linearContainer,iosFragment,"fragmentios");
+        fragmentTransaction.addToBackStack("IosFragmnet");
         fragmentTransaction.commit();
 
     }
@@ -55,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.linearContainer,androidFragment);
         fragmentTransaction.commit();
 
+    }
+    public void popbackstack(View v){
+        fragmentManager.popBackStack(0, 0);
+        getCountFragmentInActivity();
     }
     private void getCountFragmentInActivity(){
         Log.d("BBB",fragmentManager.getFragments().size() + "" );

@@ -50,6 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <Button
+        android:onClick="popbackstack"
         android:layout_below="@id/btnRemoveIos"
         android:id="@+id/btnpopbackstack"
         android:text="Pop back stack"
