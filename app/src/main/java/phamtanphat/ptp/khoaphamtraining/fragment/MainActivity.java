@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void removeAndroid(View v){
-
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         AndroidFragment androidFragment = (AndroidFragment) fragmentManager.findFragmentByTag("fragmentAndroid");
         if (androidFragment != null){
@@ -46,6 +45,15 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.commit();
             getCountFragmentInActivity();
         }
+
+    }
+    public void replaceAndroid(View v){
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Random rnd = new Random();
+        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+        AndroidFragment androidFragment = new AndroidFragment(color);
+        fragmentTransaction.replace(R.id.linearContainer,androidFragment);
+        fragmentTransaction.commit();
 
     }
     private void getCountFragmentInActivity(){
