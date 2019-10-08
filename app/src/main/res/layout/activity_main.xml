@@ -21,12 +21,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <Button
+        android:onClick="removeAndroid"
         android:layout_toRightOf="@id/btnAddIos"
         android:id="@+id/btnRemoveAndroid"
         android:text="Remove Android"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <Button
+        android:onClick="removeIos"
         android:layout_below="@id/btnAddAndroid"
         android:id="@+id/btnRemoveIos"
         android:text="Remove ios"

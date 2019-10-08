@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,19 +23,32 @@ public class MainActivity extends AppCompatActivity {
     }
     public void addAndroid(View v){
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        AndroidFragment androidFragment = new AndroidFragment();
-        fragmentTransaction.add(R.id.linearContainer,androidFragment);
+        Random rnd = new Random();
+        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+        AndroidFragment androidFragment = new AndroidFragment(color);
+        fragmentTransaction.add(R.id.linearContainer,androidFragment,"fragmentAndroid");
         fragmentTransaction.commit();
 
     }
     public void addIos(View v){
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         IosFragment iosFragment = new IosFragment();
-        fragmentTransaction.add(R.id.linearContainer,iosFragment);
+        fragmentTransaction.add(R.id.linearContainer,iosFragment,"fragmentios");
         fragmentTransaction.commit();
 
     }
-//    private void getCountFragmentInActivity(){
-//        Log.d("BBB",fragmentManager.getFragments().size() + "" );
-//    }
+    public void removeAndroid(View v){
+
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        AndroidFragment androidFragment = (AndroidFragment) fragmentManager.findFragmentByTag("fragmentAndroid");
+        if (androidFragment != null){
+            fragmentTransaction.remove(androidFragment);
+            fragmentTransaction.commit();
+            getCountFragmentInActivity();
+        }
+
+    }
+    private void getCountFragmentInActivity(){
+        Log.d("BBB",fragmentManager.getFragments().size() + "" );
+    }
 }
