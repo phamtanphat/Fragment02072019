@@ -18,6 +18,7 @@ public class AndroidFragment extends Fragment {
 
     Integer color;
 
+
     public AndroidFragment(Integer color) {
         // Required empty public constructor
         this.color = color;

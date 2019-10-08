@@ -59,9 +59,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void popbackstack(View v){
-        fragmentManager.popBackStack(0, 0);
-        getCountFragmentInActivity();
+        // backstack entry
+        if (fragmentManager.getFragments().size() <= 1 ){
+            onBackPressed();
+        }else{
+            fragmentManager.popBackStack();
+        }
+        Log.d("BBB",fragmentManager.getBackStackEntryCount() + "");
+//        getCountFragmentInActivity();
     }
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
+
     private void getCountFragmentInActivity(){
         Log.d("BBB",fragmentManager.getFragments().size() + "" );
     }
