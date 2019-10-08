@@ -8,11 +8,13 @@
     tools:context=".MainActivity">
 
     <Button
+        android:onClick="addAndroid"
         android:id="@+id/btnAddAndroid"
         android:text="Add Android"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <Button
+        android:onClick="addIos"
         android:layout_toRightOf="@id/btnAddAndroid"
         android:id="@+id/btnAddIos"
         android:text="Add ios"
@@ -69,7 +71,7 @@
         android:orientation="vertical"
         android:id="@+id/linearContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
     </LinearLayout>
 
